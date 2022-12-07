@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 02:16:01 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/07 05:08:50 by mugurel          ###   ########.fr       */
+/*   Created: 2022/12/07 04:41:26 by mugurel           #+#    #+#             */
+/*   Updated: 2022/12/07 05:02:06 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
+{
+	int	i;
+	int	src_l;
 
-int		ft_isdigit(int c);
-int		ft_isalpha(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	bzero(void *s, size_t n);
-void	*memcpy(void *dest, const void *src, size_t n);
-
-#endif
+	if (!dest || !src)
+		return (0);
+	src_l = ft_strlen(src);
+	if (!destsize)
+		return (src_l);
+	while (src[i] != 0 && i < destsize)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	if (destsize < src_l)
+		dest[destsize - 1] = '\0';
+	else if (destsize != 0)
+		dest[i] = '\0';
+	return (src_l);
+}

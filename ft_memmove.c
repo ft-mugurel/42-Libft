@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 02:16:01 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/07 05:08:50 by mugurel          ###   ########.fr       */
+/*   Created: 2022/12/06 22:30:53 by mugurel           #+#    #+#             */
+/*   Updated: 2022/12/07 05:05:44 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+void	*memmove(void *dest, const void *src, size_t n)
+{
+	char		*destt;
+	const char	*srct;
 
-int		ft_isdigit(int c);
-int		ft_isalpha(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	bzero(void *s, size_t n);
-void	*memcpy(void *dest, const void *src, size_t n);
-
-#endif
+	destt = (char *)dest;
+	srct = (const char *)src;
+	if (src == dest)
+		return (dest);
+	if (destt > srct)
+	{
+		while (n--)
+			*(destt + n) = *(srct + n);
+		return (dest);
+	}
+	while (n--)
+		*destt++ = *srct++;
+	return (dest);
+}
