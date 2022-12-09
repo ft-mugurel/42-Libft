@@ -6,13 +6,13 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:13:43 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/07 05:02:59 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/07 19:06:26 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	int	i;
 

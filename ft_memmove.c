@@ -6,13 +6,13 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 22:30:53 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/07 05:05:44 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/07 19:12:50 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*destt;
 	const char	*srct;

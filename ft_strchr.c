@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 02:04:28 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/07 21:41:09 by mugurel          ###   ########.fr       */
+/*   Created: 2022/12/08 23:09:47 by mugurel           #+#    #+#             */
+/*   Updated: 2022/12/08 23:23:07 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	return (c >= 0 && c < 128);
+	int		i;
+	char	*src;
+
+	src = (char *)s;
+	i = 0;
+	if (!ft_isascii(c))
+		return (src);
+	while (src[i])
+	{
+		if (src[i] == c)
+			return (src + i);
+		i++;
+	}
+	if (c == 0)
+		return (src + i);
+	return (0);
 }

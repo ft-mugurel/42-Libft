@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 21:26:10 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/07 19:05:47 by mugurel          ###   ########.fr       */
+/*   Created: 2022/12/08 22:22:57 by mugurel           #+#    #+#             */
+/*   Updated: 2022/12/08 22:23:04 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char		*destt;
-	const char	*srct;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	res_d;
+	unsigned int	res_s;
 
-	if ((dest == src) || (n == 0))
-		return (dest);
-	if (!dest && !src)
-		return (0);
-	destt = (char *)dest;
-	srct = (const char *) src;
-	while (n--)
+	i = ft_strlen(dst);
+	j = 0;
+	res_d = ft_strlen(dst);
+	res_s = ft_strlen(src);
+	if (size < 1)
+		return (res_s + size);
+	while (src[j] && i < size - 1)
 	{
-		destt[n] = srct[n];
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	return (dest);
+	dst[i] = '\0';
+	if (size < res_d)
+		return (res_s + size);
+	else
+		return (res_d + res_s);
 }
