@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:22:57 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/08 22:23:04 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/10 19:12:06 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	unsigned int	res_d;
 	unsigned int	res_s;
 
+	if (dst == NULL && size == 0)
+		return (0);
 	i = ft_strlen(dst);
 	j = 0;
 	res_d = ft_strlen(dst);
