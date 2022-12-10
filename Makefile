@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/10 14:44:58 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/10 18:00:52 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -61,6 +61,7 @@ clean:
 
 fclean: clean
 	@${RM} ${NAME}
+	rm libft.so a.out
 
 
 re: fclean all
