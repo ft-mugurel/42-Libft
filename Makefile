@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/10 06:36:13 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/10 06:51:19 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -32,6 +32,7 @@ SRCS = ft_memset.c			\
 		ft_strnstr.c		\
 		ft_atoi.c			\
 		ft_calloc.c			\
+		ft_strdup.c			\
 
 NAME = libft.a
 
