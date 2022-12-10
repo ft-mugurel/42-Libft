@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 22:44:03 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/10 18:52:25 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/10 19:20:40 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 
 	if (*to_find == '\0')
 		return ((char *)str);
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	while (i < len)
 	{
 		j = 0;
-		while (to_find[j] == str[i + j])
+		while (to_find[j] == str[i + j] && (i + j) < len)
 		{
 			if (to_find[j + 1] == '\0')
 				return ((char *)str + i);
