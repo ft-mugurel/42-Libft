@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 03:47:24 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/09 22:43:09 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/10 17:27:56 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	sc2 = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while (sc1[i] == sc2[i] && i < n)
+	while (i < n && sc1[i] == sc2[i])
 		i++;
 	if (i == n)
 		return (0);

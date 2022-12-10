@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/10 06:51:19 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/10 14:44:58 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -33,41 +33,42 @@ SRCS = ft_memset.c			\
 		ft_atoi.c			\
 		ft_calloc.c			\
 		ft_strdup.c			\
+		ft_substr.c			\
 
+BOBJS = $(BSRCS:.c=.o)
+MAIN = main.c
+OBJS = ${SRCS:.c=.o}
 NAME = libft.a
-
-OBJS_DIR = objs/
-OBJS = $(SRCS:.c=.o)
-OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-
-OBJSB = $(SRCSB:.c=.o)
-OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
-NAME := libft.a
-
 CC = gcc
-C_FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Werror -Wextra -g
+RM = rm -rf
+LIBC = ar rc
+OUT = ./a.out
 
-$(OBJS_DIR)%.o : %.c libft.h
-	@mkdir -p $(OBJS_DIR)
-	@echo "Compiling: $<"
-	@clang $(CC_FLAGS) -c $< -o $@
+all: ${NAME}
 
-$(NAME): $(OBJECTS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_PREFIXED)
-	@echo "Libft Done !"
+${NAME}: ${OBJS}
+	@${LIBC} ${NAME} ${OBJS}
+	@echo "\x1b[31m31 SJ\x1b[0m"
 
-all: $(NAME)
+.c.o:
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
+bonus: ${OBJS} ${BOBJS}
+	${LIBC} ${NAME} ${OBJS} ${BOBJS}
 clean:
-	rm -rf $(OBJS_DIR)
+	@${RM} ${OBJS} ${BOBJS}
 
 fclean: clean
-	rm -f $(NAME)
+	@${RM} ${NAME}
+
 
 re: fclean all
 
-bonus: $(OBJECTS_BONUS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
-	@echo "Libft Bonus Done !"
+.PHONY: all clean fclean re bonus
+
+so:
+	$(CC) -nostartfiles -fPIC $(C_FLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 # end

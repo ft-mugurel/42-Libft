@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 23:09:47 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/08 23:23:07 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/10 16:58:12 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strchr(const char *s, int c)
 
 	src = (char *)s;
 	i = 0;
-	if (!ft_isascii(c))
-		return (src);
 	while (src[i])
 	{
 		if (src[i] == c)

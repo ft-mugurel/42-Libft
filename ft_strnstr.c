@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 22:44:03 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/09 23:28:08 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/10 14:07:18 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	int		i;
+	size_t	i;
 	int		j;
 
 	if (*to_find == '\0')

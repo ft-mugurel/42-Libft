@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:13:43 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/07 19:06:26 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/10 14:04:49 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-
-	if (!s)
-		return ;
-	i = 0;
-	while (i < n)
-	{
-		*(char *)(s + i) = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }

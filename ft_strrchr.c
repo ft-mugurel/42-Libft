@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 23:24:26 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/08 23:31:25 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/10 16:57:50 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,16 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	int		len;
-	char	*src;
 
-	src = (char *)s;
-	i = (ft_strlen(src) - 1);
-	len = ft_strlen(src);
-	if (!ft_isascii(c))
-		return (src);
+	i = (ft_strlen(s) - 1);
+	len = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (src[i] == c)
-			return (src + i);
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i--;
 	}
-	if (c == 0)
-		return (src + len);
+	if ((char)c == 0)
+		return ((char *)s + len);
 	return (0);
 }
