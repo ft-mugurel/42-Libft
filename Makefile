@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/11 01:59:02 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/13 02:32:37 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -35,9 +35,9 @@ SRCS = ft_memset.c			\
 		ft_strdup.c			\
 		ft_substr.c			\
 		ft_strjoin.c		\
+		ft_strtrim.c		\
 
 BOBJS = $(BSRCS:.c=.o)
-MAIN = main.c
 OBJS = ${SRCS:.c=.o}
 NAME = libft.a
 CC = gcc
@@ -50,13 +50,14 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	@${LIBC} ${NAME} ${OBJS}
-	@echo "\x1b[31m31 SJ\x1b[0m"
+	@echo "Success"
 
 .c.o:
 	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 bonus: ${OBJS} ${BOBJS}
 	${LIBC} ${NAME} ${OBJS} ${BOBJS}
+
 clean:
 	@${RM} ${OBJS} ${BOBJS}
 
