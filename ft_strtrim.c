@@ -6,13 +6,13 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 19:56:05 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/13 02:48:02 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/17 02:25:42 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		if_in_set(char c, const char *set)
+static int	if_in_set(char c, const char *set)
 {
 	while (*set)
 		if (c == *set++)
@@ -36,7 +36,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	if (start == ft_strlen(s1))
 	{
-		if (!(rtn = ft_strdup("")))
+		rtn = ft_strdup("");
+		if (!rtn)
 			return (NULL);
 		else
 			return (rtn);
