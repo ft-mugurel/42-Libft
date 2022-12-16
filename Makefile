@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/15 23:46:41 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/17 01:50:13 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -38,6 +38,8 @@ SRCS = ft_memset.c			\
 		ft_strtrim.c		\
 		ft_split.c			\
 		ft_itoa.c			\
+		ft_strmapi.c		\
+		ft_striteri.c		\
 
 BOBJS = $(BSRCS:.c=.o)
 OBJS = ${SRCS:.c=.o}
