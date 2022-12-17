@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/17 06:41:10 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/17 22:10:34 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -53,6 +53,7 @@ BSRCS =	ft_lstnew.c			\
 		ft_lstdelone.c		\
 		ft_lstclear.c		\
 		ft_lstiter.c		\
+		ft_lstmap.c		\
 
 BOBJS = $(BSRCS:.c=.o)
 MAIN = main.c
@@ -86,7 +87,7 @@ fclean: clean
 re: fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(C_FLAGS) $(SRCS) $(BSRCS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BSRCS)
 	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BOBJS)
 
 .PHONY: all clean fclean re bonus
