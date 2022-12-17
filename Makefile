@@ -6,11 +6,11 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/17 02:13:52 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/17 04:06:29 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-SRCS = ft_memset.c			\
+SRCS =	ft_memset.c			\
 		ft_bzero.c			\
 		ft_memcpy.c			\
 		ft_memmove.c 		\
@@ -45,7 +45,11 @@ SRCS = ft_memset.c			\
 		ft_putendl_fd.c		\
 		ft_putnbr_fd.c		\
 
+BSRCS =	ft_lstnew.c			\
+		ft_lstadd_front.c	\
+
 BOBJS = $(BSRCS:.c=.o)
+MAIN = main.c
 OBJS = ${SRCS:.c=.o}
 NAME = libft.a
 CC = gcc
@@ -71,15 +75,13 @@ clean:
 
 fclean: clean
 	@${RM} ${NAME}
-	rm libft.so a.out
 
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
-
 so:
-	$(CC) -nostartfiles -fPIC $(C_FLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(C_FLAGS) $(SRCS) $(BSRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BOBJS)
 
+.PHONY: all clean fclean re bonus
 # end
