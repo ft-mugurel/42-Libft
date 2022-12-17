@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/17 04:06:29 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/17 04:11:50 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -47,6 +47,7 @@ SRCS =	ft_memset.c			\
 
 BSRCS =	ft_lstnew.c			\
 		ft_lstadd_front.c	\
+		ft_lstsize.c		\
 
 BOBJS = $(BSRCS:.c=.o)
 MAIN = main.c
