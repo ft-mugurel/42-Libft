@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 02:52:00 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/15 23:07:58 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/18 16:44:55 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ size_t	count_word(char const *str, char c)
 		if (str[i])
 			i++;
 	}
-	if (nbr == 0 && str[i - 1] == c)
-		return (0);
 	if (str[0] != c)
 		nbr++;
+	if (nbr == 0 && str[i - 1] == c)
+		return (0);
 	return (nbr);
 }
 
@@ -48,7 +48,7 @@ void	write_word(char *dest, char const *from, char c)
 	int	i;
 
 	i = 0;
-	while (char_is_separator(from[i], c) == 0)
+	while (char_is_separator(from[i], c) == 0 && from[i] != 0)
 	{
 		dest[i] = from[i];
 		i++;
@@ -71,11 +71,11 @@ int	split_word(char **res, char const *str, char c)
 		else
 		{
 			j = 0;
-			while (char_is_separator(str[i + j], c) == 0)
+			while (char_is_separator(str[i + j], c) == 0 && str[i + j] != 0)
 				j++;
 			res[word] = (char *)malloc(sizeof(char) * (j + 1));
 			if (!res[word])
-				return (1);
+				return (0);
 			write_word(res[word], str + i, c);
 			i += j;
 			word++;
