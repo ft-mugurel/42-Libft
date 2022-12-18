@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 06:50:25 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/18 05:26:57 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/18 17:33:21 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	lst = lst->next;
 	while (lst)
 	{
-		cpy->next = ft_lstnew(f(cpy->content));
+		cpy->next = ft_lstnew(f(lst->content));
 		if (!cpy->next)
 		{
 			ft_lstclear(&cpy, del);

@@ -6,7 +6,7 @@
 #    By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 02:36:36 by mugurel           #+#    #+#              #
-#    Updated: 2022/12/17 22:10:34 by mugurel          ###   ########.fr        #
+#    Updated: 2022/12/18 17:41:00 by mugurel          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -85,10 +85,6 @@ fclean: clean
 
 
 re: fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BSRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BOBJS)
 
 .PHONY: all clean fclean re bonus
 # end

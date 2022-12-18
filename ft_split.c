@@ -6,12 +6,11 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 02:52:00 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/18 16:44:55 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/18 17:36:07 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	count_word(char const *str, char c)
 {
