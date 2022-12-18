@@ -6,7 +6,7 @@
 /*   By: mugurel <muhammedtalhaugurel@gmai...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 06:50:25 by mugurel           #+#    #+#             */
-/*   Updated: 2022/12/17 22:13:25 by mugurel          ###   ########.fr       */
+/*   Updated: 2022/12/18 05:26:57 by mugurel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (0);
 	cpy = ft_lstnew(f(lst->content));
 	if (!cpy)
-		return(0);
+		return (0);
 	first = cpy;
 	lst = lst->next;
 	while (lst)
@@ -36,5 +36,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 	}
 	cpy->next = NULL;
-	return(first);
+	return (first);
 }
